@@ -15,6 +15,17 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box; /*hack para box model */
+    scroll-snap-type: y mandatory;
+}
+
+
+
+     /*scroll snap*/
+
+.servicios, .navegacion-principal, .formulario{
+     scroll-snap-align: center;
+     scroll-snap-stop: always;
+
 }
 *, *:before, *:after{
     box-sizing: inherit;
@@ -188,6 +199,9 @@ h1,h2,h3 {
     align-items: flex-end;
 
 }
+
+   
+
     /* Servicios */
 
     @media (min-width: 768px) {
@@ -236,7 +250,7 @@ h1,h2,h3 {
         background-color: var(--gris);
         width: min(60rem, 100%); /*toma el valor mas peque*/
         margin: 0 auto;
-        padding: 2rem;
+        padding: 1rem;
         border-radius: 1rem;
 
 
@@ -266,9 +280,15 @@ h1,h2,h3 {
      }
    }
 
-    .campo {
+   .campo:nth-child(3),
+   .campo:nth-child(4){
+    grid-column: 1 / 3;
+    
+   }
 
-    }
+    .campo {
+        margin-bottom: 1rem;
+        }
 
     .campo label{
         color: var(--blanco);
@@ -294,4 +314,9 @@ h1,h2,h3 {
 
     .enviar .boton{
         width: 100%;
+    }
+
+
+    .footer{
+        text-align: center;
     }
